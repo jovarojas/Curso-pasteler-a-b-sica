@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pastelería básica para principiantes | Curso online</title>
+    <meta name="description"
+        content="Aprende pastelería desde cero: técnicas, recetas y trucos para vender postres sin invertir demasiado tiempo ni dinero. Oferta limitada de lanzamiento." />
+    <meta property="og:title" content="Pastelería básica para principiantes | Curso online" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <meta property="og:description"
+        content="Aprende pastelería desde cero con recetas fáciles y técnicas profesionales. ¡Empieza tu emprendimiento dulce hoy!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image"
+        content="https://drive.google.com/file/d/1F7FairzW41su1dutoQQDXYsjvr7abt0z/view?usp=sharing" />
+    <meta name="theme-color" content="#ff8abf" />
+    <link rel="icon" type="image/png" href="images/cup-cake.png">
+    <style>
+        :root {
+            --bg: #0b0b0c;
+            --panel: #121215;
+            --muted: #9ca3af;
+            --text: #f8fafc;
+            --brand: #f97316;
+            --brand-2: #fb923c;
+            --ok: #22c55e;
+            --danger: #ef4444;
+        }
+
+        :root[data-theme="light"] {
+            --bg: #fff0f5;
+            --panel: #fff8f0;
+            --text: #4b3a4b;
+            --muted: #a995a9;
+            --brand: #ff8abf;
+            --brand-2: #ffb6d9;
+            --brand-dark: #e065a0;
+            --ok: #a3e4b7;
+            --danger: #ff6b6b;
+        }
+
+        :root[data-theme="light"] .card,
+        :root[data-theme="light"] details {
+            background: linear-gradient(180deg, #fff8f0, #ffe4e6);
+            border: 1px solid #f5dce5;
+            border-radius: 20px;
+            padding: 1.2rem;
+            color: var(--text);
+        }
+
+        :root[data-theme="light"] .timer .cell {
+            background: #fff0f5;
+            border: 1px solid #f5dce5;
+            border-radius: 12px;
+            padding: .55rem .75rem;
+            text-align: center;
+            min-width: 62px;
+        }
+
+        :root[data-theme="light"] .badge,
+        :root[data-theme="light"] .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            background: #ffe1f0;
+            border: 1px solid #ffb6d9;
+            color: var(--text);
+            border-radius: 999px;
+            font-size: .8rem;
+        }
+
+
+        :root[data-theme="light"] .price .new {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+        }
+
+        :root[data-theme="light"] .btn.secondary {
+            background: #ffc0e1;
+            color: #4b3a4b;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 182, 217, .25);
+        }
+
+        :root[data-theme="light"] .price .badge {
+            color: var(--brand);
+        }
+
+        :root[data-theme="light"] .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .9rem 1.2rem;
+            border-radius: 14px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 138, 191, .35);
+            transition: all .3s ease;
+        }
+
+        :root[data-theme="light"] .carousel-item {
+            min-width: calc(33.333% - 0.66rem);
+            background: var(--panel);
+            border-radius: 12px;
+            text-align: center;
+            flex-shrink: 0;
+            padding: .5rem;
+        }
+
+        :root[data-theme="light"] .hero p.lead {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 55ch;
+        }
+
+        :root[data-theme="light"] .sticky-cta {
+            background: var(--panel);
+            border: 1px solid var(--brand);
+            box-shadow: 0 8px 30px rgba(255, 138, 191, .2);
+        }
+
+        :root[data-theme="light"] .card.bonus p,
+        :root[data-theme="light"] .card.bonus li {
+            color: var(--text);
+        }
+
+        :root[data-theme="light"] .testimonial {
+            padding: 2rem;
+            border-radius: 16px;
+            background: var(--bg);
+            box-shadow: 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            text-align: center;
+        }
+
+        :root[data-theme="light"] .author {
+            font-weight: bold;
+            color: var(--brand-dark);
+        }
+
+        :root[data-theme="light"] .testimonial img {
+            border: 2px solid var(--brand-dark);
+        }
+
+        :root[data-theme="light"] .sticky-cta .btn {
+            background: var(--brand);
+            color: #fff;
+        }
+
+        :root[data-theme="light"] .carousel-btn {
+            color: var(--text);
+            background: var(--brand);
+        }
+
+        /*Sombra del nav*/
+        :root[data-theme="light"] header.site {
+            background: var(--brand-2);
+            box-shadow: 0 6px 8px -2px rgba(255, 138, 191, .35);
+            border-bottom: none;
+        }
+
+        :root[data-theme="light"] nav a:hover {
+            background: var(--bg);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        .container {
+            width: min(1100px, 92vw);
+            margin-inline: auto;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .card.bonus p,
+        .card.bonus li {
+            color: var(--text);
+            font-size: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .9rem 1.1rem;
+            border-radius: 14px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(249, 115, 22, .35);
+            transition: transform .15s ease, box-shadow .15s ease
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(249, 115, 22, .45)
+        }
+
+        .btn.secondary {
+            background: #1f2937;
+            box-shadow: none
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            background: #1f2937;
+            border: 1px solid #2b3340;
+            color: #e5e7eb;
+            padding: .25rem .55rem;
+            border-radius: 999px;
+            font-size: .8rem;
+        }
+
+        span.pill {
+            padding: 0.25rem 0.55rem;
+        }
+
+        .pill {
+            display: inline-block;
+            background: #0f172a;
+            border: 1px solid #2e3442;
+            border-radius: 999px;
+            color: #cbd5e1;
+            font-size: .85rem
+        }
+
+        header.site {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 11, 12, .7);
+            backdrop-filter: saturate(120%) blur(10px);
+            border-bottom: 1px solid #1f2937;
+            z-index: 300
+        }
+
+        header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .85rem 0
+        }
+
+        nav a {
+            padding: .55rem .8rem;
+            border-radius: 10px
+        }
+
+        nav a:hover {
+            background: #1f2937
+        }
+
+        .hero {
+            position: relative;
+            isolation: isolate
+        }
+
+        .hero .grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1.1fr 1.6fr;
+            align-items: center;
+            padding: 4rem 0 2.5rem
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.05;
+            margin: .6rem 0
+        }
+
+        .hero p.lead {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            max-width: 55ch
+        }
+
+        .hero .card {
+            background: linear-gradient(180deg, #141419, #0e0e11);
+            border: 1px solid #232533;
+            border-radius: 20px;
+            padding: 1.2rem
+        }
+
+        .hero figure {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(249, 115, 22, .35);
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: .75rem;
+            margin: .8rem 0 0
+        }
+
+        .price .old {
+            color: #9ca3af;
+            text-decoration: line-through
+        }
+
+        .price .new {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff
+        }
+
+        .timer {
+            display: flex;
+            gap: .6rem;
+            margin-top: .6rem
+        }
+
+        .timer .cell {
+            background: #0b1220;
+            border: 1px solid #223048;
+            border-radius: 12px;
+            padding: .55rem .75rem;
+            text-align: center;
+            min-width: 62px
+        }
+
+        .timer .cell strong {
+            display: block;
+            font-size: 1.2rem
+        }
+
+        .section {
+            padding: 3.2rem 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .02), transparent);
+        }
+
+        .section h2 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            margin: 0 0 1rem
+        }
+
+        .grid-3 {
+            display: grid;
+            gap: 1.2rem;
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        .grid-2 {
+            display: grid;
+            gap: 1.2rem;
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        .card {
+            background: #0f1219;
+            border: 1px solid #222839;
+            border-radius: 18px;
+            padding: 1.1rem
+        }
+
+        .feature {
+            display: flex;
+            gap: .8rem
+        }
+
+        .feature .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: var(--ok);
+            margin-top: .62rem;
+            flex: 0 0 auto;
+            position: relative;
+            top: 25px;
+        }
+
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+            padding: 2rem;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid #f97316;
+        }
+
+        .stars {
+            letter-spacing: 2px
+        }
+
+        .about {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 320px 1fr;
+            align-items: start
+        }
+
+        details {
+            background: #0f1219;
+            border: 1px solid #202637;
+            border-radius: 14px;
+            padding: 1rem
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 600
+        }
+
+        footer {
+            padding: 2.5rem 0;
+            color: #9aa3b2
+        }
+
+        .sticky-cta {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            background: #0f1219;
+            border: 1px solid #273041;
+            border-radius: 16px;
+            padding: .7rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .35)
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0
+        }
+
+        /* General */
+        .module {
+            margin-bottom: 2rem;
+        }
+
+        /* Carrusel */
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.8rem;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-item {
+            min-width: calc(33.333% - 0.66rem);
+            background: #121215;
+            border-radius: 12px;
+            text-align: center;
+            flex-shrink: 0;
+            padding: 0.5rem;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 0.3rem;
+            max-width: 450px;
+            height: 300px;
+        }
+
+        .carousel-item video {
+            width: 100%;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1f2937;
+            border: none;
+            color: var(--text);
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-btn.prev {
+            left: -10px;
+        }
+
+        .carousel-btn.next {
+            right: -10px;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+
+        }
+
+        nav {
+            z-index: 200;
+        }
+
+        .socials {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            padding: 0.5rem 1rem;
+            background: var(--brand);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.15s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+            background: var(--brand-2);
+        }
+
+        .resources {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .resources ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resources li {
+            margin: 0.8rem 0;
+        }
+
+        .resources a {
+            color: var(--brand);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .resources a:hover {
+            color: var(--brand-2);
+        }
+
+        .theme-switch {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .author {
+            font-weight: bold;
+            color: #f97316;
+        }
+
+        /*Slider modo oscuro*/
+        .slider {
+            position: relative;
+            cursor: pointer;
+            width: 60px;
+            height: 30px;
+            background-color: var(--brand-dark);
+            border-radius: 34px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            box-shadow: 2px 2px 8px black;
+        }
+
+        .icon {
+            pointer-events: none;
+            font-size: 14px;
+        }
+
+        .slider::before {
+            content: "";
+            position: absolute;
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 3px;
+            background-color: var(--bg);
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        /* Activado (modo oscuro) */
+        input:checked+.slider {
+            background-color: whitesmoke;
+        }
+
+        input:checked+.slider::before {
+            transform: translateX(20px);
+        }
+
+        .card.module.bonus h3 {
+            font-size: 3em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100%;
+                width: 70%;
+                max-width: 300px;
+                border-radius: 12px 0 0 12px;
+                transition: right 0.3s ease-in-out;
+                z-index: 200;
+            }
+
+            body.nav-open {
+                overflow: hidden;
+                height: 100vh;
+            }
+
+            .nav-overlay {
+                z-index: 100;
+            }
+
+            nav.active {
+                right: 0;
+                top: 0;
+                padding-top: 70px;
+                height: auto;
+                border: solid lightgrey 1px;
+                background-color: gray;
+            }
+
+            :root[data-theme="light"] nav.active {
+                background: linear-gradient(180deg, #fff8f0, #ffe4e6);
+                border: 1px solid #f5dce5;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.8rem;
+                color: var(--text);
+                cursor: pointer;
+                position: fixed;
+                top: 4px;
+                right: 20px;
+                z-index: 500;
+            }
+
+            .carousel-item img,
+            .carousel-item video {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 12px;
+                max-width: 300px;
+            }
+
+
+            .carousel-item {
+                min-width: 95%;
+                margin-inline: auto;
+            }
+
+            .hero figure video {
+                width: 100%;
+                display: block;
+                height: auto;
+            }
+
+            .sticky-cta {
+                right: 10%;
+                transform: translateX(10%);
+                bottom: 12px;
+                width: calc(70% - 24px);
+                justify-content: space-between;
+            }
+
+            .carousel-track {
+                scroll-snap-type: x mandatory;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                display: flex;
+                gap: 12px;
+            }
+
+            .carousel-wrapper {
+                overflow-x: auto;
+                padding-left: 16px;
+                /* espacio inicial para que el primer item no pegue al borde */
+                padding-right: 16px;
+                scroll-padding-left: 16px;
+            }
+
+            .carousel-item {
+                min-width: 80%;
+                margin-right: 10px;
+                /* separación entre items */
+                scroll-snap-align: start;
+                flex: 0 0 85%;
+                /* ocupa el 85% del ancho, dejando 15% visible del siguiente item */
+                border-radius: 12px;
+            }
+
+            .carousel-item::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -12px;
+                width: 12px;
+                height: 100%;
+                background: linear-gradient(to left, rgba(0, 0, 0, 0.15), transparent);
+                pointer-events: none;
+                border-radius: 0 12px 12px 0;
+            }
+
+            .carousel-btn {
+                display: none;
+            }
+
+            .card.module.bonus h3 {
+                font-size: 2em;
+            }
+
+            .theme-switch {
+                display: block;
+                bottom: 25px;
+                left: 10%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 28px;
+            }
+
+            .slider {
+                width: 50px;
+                bottom: 25px;
+                height: 28px;
+                padding: 0 4px;
+            }
+
+            .slider::before {
+                width: 20px;
+                height: 20px;
+            }
+
+            footer .container p {
+                display: inline-block;
+                flex: none;
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .hero .grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr
+            }
+
+            .about {
+                grid-template-columns: 1fr
+            }
+
+            .grid-2,
+            .grid-3 {
+                gap: 2rem;
+            }
+
+
+        }
+
+        @media (min-height:840px) and (min-width:340px) and (max-width:1024px) {
+            .theme-switch {
+                bottom: 3%;
+            }
+
+            .slider {
+                width: 50px;
+                bottom: 100px;
+                height: 28px;
+                padding: 0 4px;
+            }
+
+            .slider::before {
+                width: 20px;
+                height: 20px;
+            }
+
+            .sticky-cta {
+                right: 10%;
+                transform: translateX(10%);
+                bottom: 10%;
+                width: calc(70% - 24px);
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-height:900px) and (min-width:410px) and (max-width:1024px) {
+            .theme-switch {
+                bottom: 10%;
+            }
+
+            .slider {
+                bottom: 90px;
+            }
+
+            .sticky-cta {
+                bottom: 15%;
+            }
+        }
+
+        @media (min-height:1023px) and (min-width:760px) {
+            .theme-switch {
+                bottom: 15%;
+            }
+
+            .slider {
+                bottom: 100px;
+            }
+
+            .sticky-cta {
+                bottom: 22%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            nav {
+                position: static;
+                flex-direction: row;
+                gap: 1rem;
+                background: transparent;
+                height: auto;
+                width: auto;
+                box-shadow: none;
+                border-radius: 0;
+                right: auto;
+                z-index: auto;
+            }
+
+            input:checked+.slider::before {
+                transform: translateX(30px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="sr-only" href="#contenido">Saltar al contenido</a>
+    <!-- Header -->
+    <header class="site">
+        <div class="container wrap">
+            <a href="#" class="logo" aria-label="Inicio"><strong>🍰 Pastelería Básica</strong></a>
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <nav aria-label="principal">
+                <a href="#aprender">Qué aprenderás</a>
+                <a href="#temario">Temario</a>
+                <a href="#testimonios">Opiniones</a>
+                <a href="#sobre">Sobre mí</a>
+                <a href="#faq">Dudas frecuentes</a>
+                <a href="https://wa.me/message/EEABKUWCGVCUD1" target="_blank" rel="noopener">Contacto</a>
+                <a href="#precio" class="pill">Oferta</a>
+            </nav>
+        </div>
+    </header>
+    <div class="nav-overlay"></div>
+    <!-- Hero -->
+    <section class="hero" id="contenido" aria-label="Introducción">
+        <div class="container grid">
+            <div>
+                <span class="badge" style="margin-top: 30px;">Curso online · para principiantes</span>
+                <h1>Aprende pastelería desde cero y crea postres irresistibles que <em>sí se venden</em>.</h1>
+                <p class="lead">Te enseño, paso a paso y con pocos utensilios, las técnicas y recetas base para que
+                    puedas producir, ofrecer variaciones creativas y diferenciarte sin gastar de más.</p>
+                <div class="card" aria-live="polite">
+                    <p>21 clases + Bonus al precio de 1</p>
+                    <div class="price">
+                        <span class="old" id="oldPrice">68,50 $</span>
+                        <span class="new" id="newPrice">29,99 $</span>
+                        <span class="badge" id="discountBadge">-56% hoy</span>
+                    </div>
+                    <p style="color:var(--brand); margin-top:0.5rem; font-weight:600;">
+                        Con 23 clases + bonus, ¡cada clase te sale a solo 1,30 $!
+                    </p>
+                    <div class="timer" id="timer" aria-label="Cuenta regresiva de oferta" role="timer">
+                        <div class="cell"><strong id="t-d">–</strong><small>días</small></div>
+                        <div class="cell"><strong id="t-h">–</strong><small>horas</small></div>
+                        <div class="cell"><strong id="t-m">–</strong><small>min</small></div>
+                        <div class="cell"><strong id="t-s">–</strong><small>seg</small></div>
+                    </div>
+                    <div style="display:flex;gap:.6rem;margin-top:.9rem;flex-wrap:wrap">
+                        <a href="#precio" class="btn" aria-label="Inscribirme ahora">Inscribirme ahora</a>
+                        <a href="#temario" class="btn secondary" aria-label="Ver temario">Ver temario</a>
+                        <span class="pill">Acceso inmediato · Certificado</span>
+                    </div>
+                </div>
+                <p class="lead">Garantía de satisfacción de 7 días. Acceso de por vida a las
+                    lecciones</p>
+            </div>
+            <figure>
+                <video src="videos/bienvenida.mp4" controls loop></video>
+            </figure>
+        </div>
+    </section>
+
+    <section class="extras">
+        <div class="container">
+            <h2>Conéctate y aprende más</h2>
+            <div class="extras-links" style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+                <!-- Redes sociales -->
+                <a href="https://www.tiktok.com/@jovacakedesigner" target="_blank" class="btn secondary">TikTok</a>
+                <a href="https://www.instagram.com/jovacakedesigner_/" target="_blank"
+                    class="btn secondary">Instagram</a>
+                <a href="https://www.facebook.com/jovarojascakedesigner" target="_blank"
+                    class="btn secondary">Facebook</a>
+            </div>
+            <div class="extras-resources" style="display:flex; flex-direction:column; gap:0.5rem;">
+                <!-- Recursos gratuitos -->
+                <a href="https://youtu.be/qlEQnn6ye6k?si=bKOLIn8_zyx28o-a" target="_blank" class="btn">Clase gratuita en
+                    YouTube</a>
+                <a href="https://youtu.be/TG0Dnu0X2VU?si=coseB5S7O7ENTFe3" target="_blank" class="btn">Tutorial de uso
+                    de la plataforma</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué aprenderás -->
+    <section class="section" id="aprender">
+        <div class="container">
+            <h2>¿Qué vas a aprender?</h2>
+            <div class="grid-3 card">
+                <div class="feature"><span class="dot"></span>
+                    <div>
+                        <h3>Ingredientes sin misterios</h3>
+                        <p class="muted">Recomendaciones, diferencias y <strong>sustituciones</strong> para que puedas
+                            producir con lo que tengas a mano.</p>
+                    </div>
+                </div>
+                <div class="feature"><span class="dot"></span>
+                    <div>
+                        <h3>Técnica + base creativa</h3>
+                        <p>Comprende la <strong>técnica</strong> detrás de cada receta para crear incontables
+                            variaciones y destacar frente a tu competencia.</p>
+                    </div>
+                </div>
+                <div class="feature"><span class="dot"></span>
+                    <div>
+                        <h3>Hecho a mano, con pocos utensilios</h3>
+                        <p>Procesos optimizados para <strong>ahorrar tiempo y dinero</strong> sin sacrificar calidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temario con carruseles responsive -->
+    <section class="section" id="temario">
+        <div class="container">
+            <h2>Temario del curso</h2>
+            <p>Aprenderás a preparar deliciosos postres paso a paso: pasteles, postres por porción y dulces para mesa.
+                Todos los videos están diseñados para que sigas las recetas sin complicaciones, ¡no necesitas nada antes
+                de empezar!</p>
+            <p>Descubre todo lo que aprenderás en este curso con fichas detalladas de cada postre, acompañadas de
+                <strong>fotos reales</strong> del resultado, las técnicas que dominarás y los ingredientes que
+                utilizaremos.
+            </p>
+            <p>No te preocupes si algún ingrediente o material parece difícil de conseguir: <strong>te enseñaré cómo
+                    sustituirlo o
+                    incluso fabricarlo tú mismo</strong>, para que nada detenga tu aprendizaje.</p>
+            <p>¡Da el primer paso hacia convertirte en un gran pastelero! Descarga el temario y conoce todo lo que te
+                espera en el curso:</p> <!-- Botón destacado para el PDF -->
+            <div style="text-align:center; margin:2rem 0;">
+                <a href="documentos/Temario pastelería para principiantes.pdf" download class="btn" style="    font-size: 20px;
+                    box-shadow: 0 4px 8px rgba(255, 138, 191, 0.3);">
+                    📥 Ver temario rápido (PDF)
+                </a>
+                <p style="font-size:14px; color:#555; margin-top:0.5rem;">
+                    Información práctica de cada receta: técnicas, materiales, duración y foto.
+                </p>
+            </div>
+
+            <!-- 01 · Introducción a los ingredientes -->
+            <div class="card module">
+                <h3>01 · Introducción a los ingredientes</h3>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-item"><img src="images/ingredientes.jpg" alt="Ingredientes">
+                            <p>Recomendaciones y sustituciones</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 02 · Pasteles -->
+            <div class="card module">
+                <h3>02 · Pasteles</h3>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev">◀</button>
+                    <div class="carousel-track">
+                        <div class="carousel-item"> <video src="videos/bizcochotradicional.webm" width="450px"
+                                height="300px" controls></video>
+                            <p>Bizcocho tradicional</p>
+                            <p style="font-size: 80%;">Ideal para pasteles a capas</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/4 cuartos.jpg" alt="bizcocho 4 cuartos">
+                            <p>Bizcocho 4 cuartos</p>
+                            <p style="font-size: 80%;">Ideal para pasteles en fondant</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/red velvet.jpg" alt="bizcocho red velvet">
+                            <p>Bizcocho Red velvet</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/naranja.jpg" alt="Budín de naranja">
+                            <p>Budín de naranja</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/zanahoria.jpg" alt="Torta de zanahoria">
+                            <p>Torta de zanahoria</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/matilda.jpg" alt="Torta Matilda">
+                            <p>Torta Matilda</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/selva.jpg" alt="Selva negra">
+                            <p>Selva negra</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/tres.jpg" alt="Pastel 3 leches">
+                            <p>Pastel 3 leches</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/mojada de choco.jpg" alt="Mojada de chocolate">
+                            <p>Mojada de chocolate</p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next">▶</button>
+                </div>
+            </div>
+
+            <!-- 03 · Postres para mesa dulce -->
+            <div class="card module">
+                <h3>03 · Postres para mesa dulce</h3>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev">◀</button>
+                    <div class="carousel-track">
+                        <div class="carousel-item"><img src="images/cupcakes.jpg" alt="Cupcakes de vainilla">
+                            <p>Cupcakes de vainilla</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/cupcakes red velvet.jpg" alt="Cupcakes Red Velvet">
+                            <p>Cupcakes Red Velvet</p>
+                            <p>Con frosting de queso antigravedad</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/muffins.jpg"
+                                alt="Muffins de chocolate estilo Starbucks">
+                            <p>Muffins de chocolate estilo Starbucks</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/arandanos.jpg" alt="Muffins de arándanos">
+                            <p>Muffins de arándanos</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/galletas.jpg" alt="Galletas americanas">
+                            <p>Galletas americanas</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/roles.png" alt="Roles de canela">
+                            <p>Roles de canela</p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next">▶</button>
+                </div>
+            </div>
+
+            <!-- 04 · Postres enteros -->
+            <div class="card module">
+                <h3>04 · Postres enteros o por porción</h3>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev">◀</button>
+                    <div class="carousel-track">
+                        <div class="carousel-item"><img src="images/chees.jpg" alt="Cheesecake New York">
+                            <p>Cheesecake New York</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/marq.jpg" alt="Marquesa de maracuyá">
+                            <p>Marquesa de maracuyá</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/pay.jpg" alt="Pay de limón">
+                            <p>Pay de limón</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/tira.jpg" alt="Tiramisú">
+                            <p>Tiramisú</p>
+                        </div>
+                        <div class="carousel-item"><img src="images/brownie.jpg" alt="Brownie">
+                            <p>Brownie</p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next">▶</button>
+                </div>
+            </div>
+
+            <!-- BONUS + NAVIDAD -->
+            <div class="card module bonus"
+                style="border:2px dashed var(--brand); background: var(--panel); padding: 1.5rem; border-radius: 16px;">
+                <h3 style="color:var(--brand-dark); text-align:center;">🎁 05 · BONUS POR INSCRIPCIÓN
+                </h3>
+                <p style="text-align:center; margin-bottom:1.5rem;">
+                    Además si te inscribes ahora, con las <strong>21 clases del curso</strong>,
+                    te llevas estos EXTRAS EXCLUSIVOS + <strong>2 CLASES ESPECIALES de Navidad</strong>:
+                </p>
+                <ul
+                    style="font-size:18px; line-height:1.8; max-width:600px; margin:0 auto 2rem auto; color: var(--bg);">
+                    <li>📖 Recetario completo del curso</li>
+                    <li>Seguimiento continuo por chat privado(Whatsapp o email)</li>
+                    <li>📝 Ficha del cliente para organizar tus pedidos</li>
+                    <li>✨ Material complementario:
+                        <br>· Recetas extras de rellenos, cremas, algunos bizcochos(Incluido 1 sin gluten)
+                        <br>· Técnicas y errores frecuentes al hornear
+                        <br>· Cómo porcionar
+                        <br>· Utensilios y materiales recomendados
+                    </li>
+                </ul>
+                <p style="text-align:center; margin-top:1rem; color:var(--brand); font-weight: 700;">
+                    21 clases + 2 extras = 23 clases por solo 29,99 $ → ¡1,30 $ por clase!
+                </p>
+                <!-- ESPECIAL DE NAVIDAD -->
+                <div class="card module" style="margin-top:2rem;">
+                    <h3 style="text-align:center; font-size: 1.17em;">06 · ESPECIAL DE NAVIDAD</h3>
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track">
+                            <div class="carousel-item" style="min-width:calc(50% - 0.50rem); margin-left: 25px;"><img
+                                    src="images/galletasdecoradas.png" alt="Galletas de jengibre">
+                                <p>Galletas de jengibre</p>
+                            </div>
+                            <div class="carousel-item" style="min-width:calc(50% - 0.50rem); margin-left: 25px;"><img
+                                    src="images/tortanavideñacompleto.jpg" alt="Bizcocho navideño">
+                                <p>Bizcocho navideño</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class=" section" id="testimonios" style="background:#fff7ed; padding:4rem 0;">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:2rem;">Lo que dicen mis estudiantes</h2>
+
+            <div class="grid-3" style="display:flex; gap:2rem; flex-wrap:wrap; justify-content:center;">
+
+                <!-- Testimonio 1 -->
+                <div class="card testimonial">
+                    <img src="images/astrid.jpg" alt="Astrid">
+                    <div class="stars" style="color:#fbbf24; font-size:1.2rem; margin-bottom:1rem;">★★★★★</div>
+                    <blockquote style="font-style:italic; color:#333; margin-bottom:1rem;">
+                        Con este curso monté mi menú de fin de semana y recuperé la inversión en
+                        la primera venta.
+                        ¡Ahora mis clientes piden más!
+                    </blockquote>
+                    <div class="author">— Astrid C.
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="card testimonial">
+                    <img src="images/carlos.jpg" alt="Carlos M.">
+                    <div class="stars" style="color:#fbbf24; font-size:1.2rem; margin-bottom:1rem;">★★★★★</div>
+                    <blockquote style="font-style:italic; color:#333; margin-bottom:1rem;">
+                        Las explicaciones son tan claras que el bizcocho tres leches me quedó
+                        perfecto a la primera. ¡Me
+                        siento más seguro en la cocina!
+                    </blockquote>
+                    <div class="author">— Carlos R.
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="card testimonial">
+                    <img src="images/lill.jpg" alt="Lill M.">
+                    <div class="stars" style="color:#fbbf24; font-size:1.2rem; margin-bottom:1rem;">★★★★★</div>
+                    <blockquote style="font-style:italic; color:#333; margin-bottom:1rem;">
+                        Me encantó que todo se pueda hacer con pocos utensilios. Puedo hornear
+                        en casa, estar con mi
+                        familia y vender mis
+                        postres sin complicaciones.
+                    </blockquote>
+                    <div class="author">— Lill M.</div>
+                </div>
+
+            </div>
+
+            <!-- CTA final -->
+            <p style="text-align:center; margin-top:3rem; font-size:1.2rem; color:#333;">
+                Únete a cientos de estudiantes que ya transformaron su cocina y comenzaron a
+                vender sus postres.
+                <strong>¡Inscríbete hoy y empieza a crear dulzura!</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Sobre mí -->
+    <section class="section" id="sobre">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <div class="about">
+                <img src="images/foto jova.jpg" alt="Foto de Jovanna Rojas"
+                    style="border-radius:16px;border:1px solid #232533" />
+                <div class="card">
+                    <p><strong>Jovanna Rojas Malavé</strong> · 3 años en Hotmart</p>
+                    <p>Fundadora de Sweet Factory - Ecuador <em><a href="https://www.facebook.com/sweetfactoryecu"
+                                target="_blank">(haz clic para ir a Facebook)</a></em></p>
+                    <p>Emprendí en el mundo de la pastelería desde 2017. Preparé este curso con atención al detalle para
+                        que aprendas de mis aciertos y errores. Mi objetivo es ayudarte a llegar a la mesa de tus
+                        clientes y cumplir tus metas a través de la pastelería.</p>
+                    <p>Te invito a unirte a este curso, donde estaré atenta a todas tus dudas. Juntos, paso a paso,
+                        lograremos que te conviertas en un gran pastelero y lleves dulzura a la vida de quienes te
+                        rodean.</p>
+                    <p>La pastelería es un oficio que nos permite ser felices haciendo lo que amamos, y compartir esa
+                        felicidad con nuestros clientes y familiares. ¡Acompáñame en este camino!</p>
+                    <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
+                        <span class="pill">+8 años emprendiendo</span>
+                        <span class="pill">Enfoque práctico</span>
+                        <span class="pill">Acceso de por vida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precio / CTA -->
+    <section class="section" id="precio">
+        <div class="container">
+            <h2>Inscríbete hoy con oferta limitada</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 style="margin-top:0">Plan único</h3>
+                    <ul class="list">
+                        <li>Acceso inmediato a todas las lecciones</li>
+                        <li>Certificado de finalización</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                    <div class="price">
+                        <span class="old" id="oldPrice2">68,50 $</span>
+                        <span class="new" id="newPrice2">29,99 $</span>
+                    </div>
+                    <p style="margin-top:0.5rem; font-weight:bold; color:var(--brand);">
+                        23 lecciones por 29,99 $ → ¡solo 1,30 $ por clase!
+                    </p>
+                    <p style="color:#9aa3b2">Precio en USD · + Impuestos si aplican en tu país</p>
+                    <div style="display:flex;gap:.6rem;margin-top:.9rem;flex-wrap:wrap">
+                        <a class="btn" id="buyBtn" href="#" target="_blank" rel="noopener"
+                            aria-label="Comprar en Hotmart">Comprar en Hotmart</a>
+                        <a class="btn secondary" href="#faq">Dudas frecuentes</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 style="margin-top:0">Garantía sin riesgos</h3>
+                    <p>Prueba el curso durante <strong>7 días</strong>. <span style="color: var(--brand);"><b>Si no es
+                                para
+                                ti, te devolvemos el 100%.</span></b></p>
+                    <p>Medios de pago: tarjeta, débito y opciones locales según tu país.</p>
+                    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem">
+                        <span class="pill">Pago seguro</span>
+                        <span class="pill">Hotmart</span>
+                        <span class="pill">Acceso inmediato</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2>Preguntas frecuentes</h2>
+            <div class="grid-2">
+                <details open>
+                    <summary>¿Cuánto dura el curso?</summary>
+                    <p>Avanza a tu ritmo. El acceso es de por vida.</p>
+                </details>
+                <details>
+                    <summary>¿Necesito equipos profesionales?</summary>
+                    <p>No. Te enseño a hacerlo <strong>a mano</strong> y con pocos utensilios.</p>
+                </details>
+                <details>
+                    <summary>¿Obtengo certificado?</summary>
+                    <p>Sí, al completar todas las lecciones Hotmart emite un certificado firmado por mi.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo funciona la garantía?</summary>
+                    <p>Si en 7 días decides que no es para ti, solicitas el reembolso completo.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+            <p>© <span id="year"></span> Pastelería básica — Todos los derechos reservados.</p>
+            <p><a href="https://wa.me/message/EEABKUWCGVCUD1" target="_blank" rel="noopener">Contacto</a></p>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" aria-hidden="true">
+        <span style="font-weight:700">29,99 $</span>
+        <a href="#precio" class="btn" style="padding:.6rem .9rem">Inscribirme</a>
+    </div>
+
+    <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+        </span>
+    </label>
+
+    <script>
+        // ===== Configuración =====
+        const HOTMART_LINK = "https://pay.hotmart.com/D74538775P"; // enlace de checkout de Hotmart
+        const MIN_HOURS = 24;     // mínimo plazo de la oferta
+        const MAX_HOURS = 72;     // máximo plazo de la oferta
+
+        // ===== Utilidades =====
+        const $ = (sel) => document.querySelector(sel);
+        const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+        // ===== Año dinámico =====
+        $('#year').textContent = new Date().getFullYear();
+
+        // ===== Enlace de compra =====
+        if (HOTMART_LINK && HOTMART_LINK !== '#') {
+            $('#buyBtn').href = HOTMART_LINK;
+        }
+
+        // ===== Cuenta regresiva con persistencia =====
+        const KEY = 'pb_offer_deadline_v2';
+        let deadline = localStorage.getItem(KEY);
+
+        function setRandomDeadline() {
+            const hours = Math.floor(Math.random() * (MAX_HOURS - MIN_HOURS + 1)) + MIN_HOURS;
+            const d = new Date();
+            d.setHours(d.getHours() + hours);
+            deadline = d.toISOString();
+            localStorage.setItem(KEY, deadline);
+        }
+
+        if (!deadline) setRandomDeadline();
+
+        function updateTimer() {
+            const end = new Date(deadline).getTime();
+            const now = Date.now();
+            let diff = end - now;
+
+            if (diff <= 0) {
+                // Reiniciamos el temporizador aleatoriamente
+                setRandomDeadline();
+                diff = new Date(deadline).getTime() - now;
+            }
+
+            const s = Math.floor(diff / 1000);
+            const days = Math.floor(s / 86400);
+            const hours = Math.floor((s % 86400) / 3600);
+            const mins = Math.floor((s % 3600) / 60);
+            const secs = s % 60;
+
+            $('#t-d').textContent = String(days).padStart(2, '0');
+            $('#t-h').textContent = String(hours).padStart(2, '0');
+            $('#t-m').textContent = String(mins).padStart(2, '0');
+            $('#t-s').textContent = String(secs).padStart(2, '0');
+
+            $$('#newPrice, #newPrice2').forEach(el => el.textContent = '29,99 $');
+            $$('#oldPrice, #oldPrice2, #discountBadge').forEach(el => el.style.display = '');
+            const timer = $('#timer');
+            if (timer) timer.style.display = 'flex';
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+            const track = wrapper.querySelector('.carousel-track');
+            const prev = wrapper.querySelector('.prev');
+            const next = wrapper.querySelector('.next');
+            const items = wrapper.querySelectorAll('.carousel-item');
+            let index = 0;
+
+            const getItemWidth = () => {
+                const rect = items[0].getBoundingClientRect();
+                const style = window.getComputedStyle(items[0]);
+                const marginRight = parseFloat(style.marginRight) || 0;
+                return rect.width + marginRight;
+            };
+
+            const update = () => {
+                const width = getItemWidth();
+                const maxScroll = track.scrollWidth - wrapper.offsetWidth; // máximo scroll permitido
+                let translate = index * width;
+
+                if (translate > maxScroll) translate = maxScroll; // nunca pasar del último item
+
+                if (window.innerWidth < 768) {
+                    track.scrollLeft = translate;
+                } else {
+                    track.style.transform = `translateX(${-translate}px)`;
+                }
+            };
+
+            next?.addEventListener('click', () => {
+                index++;
+                update();
+            });
+
+            prev?.addEventListener('click', () => {
+                if (index > 0) index--;
+                update();
+            });
+        });
+
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+            const track = wrapper.querySelector('.carousel-track');
+            let startX = 0;
+            let scrollLeft = 0;
+            let isDragging = false;
+
+            wrapper.addEventListener('touchstart', e => {
+                isDragging = true;
+                startX = e.touches[0].pageX - track.offsetLeft;
+                scrollLeft = track.scrollLeft;
+            });
+
+            wrapper.addEventListener('touchmove', e => {
+                if (!isDragging) return;
+                const x = e.touches[0].pageX - track.offsetLeft;
+                const walk = startX - x;
+                track.scrollLeft = scrollLeft + walk;
+            });
+
+            wrapper.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        const overlay = document.querySelector('.nav-overlay');
+        const body = document.body;
+
+        function openMenu() {
+            nav.classList.add('active');
+            overlay.classList.add('active');
+            body.classList.add('nav-open');
+            menuToggle.textContent = '✕';
+        }
+
+        function closeMenu() {
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            body.classList.remove('nav-open');
+            menuToggle.textContent = '☰';
+        }
+
+        // Toggle menú
+        menuToggle.addEventListener('click', () => {
+            if (nav.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Cerrar menú al hacer clic en overlay
+        overlay.addEventListener('click', closeMenu);
+
+        // Cerrar menú al hacer clic en un enlace
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // ===== Scroll suave =====
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', (e) => {
+                const id = a.getAttribute('href');
+                const el = document.querySelector(id);
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        //Cambiar a modo oscuro
+        const toggle = document.getElementById("theme-toggle");
+        const root = document.documentElement;
+
+        // Por defecto: modo claro
+        root.setAttribute("data-theme", "light");
+
+        // Cargar preferencia guardada
+        if (localStorage.getItem("theme") === "dark") {
+            root.setAttribute("data-theme", "dark");
+            toggle.checked = true;
+        }
+
+        // Escuchar cambios en el switch
+        toggle.addEventListener("change", () => {
+            if (toggle.checked) {
+                root.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                root.setAttribute("data-theme", "light");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
+
+</html>
